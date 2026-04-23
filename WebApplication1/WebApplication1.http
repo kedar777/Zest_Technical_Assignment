@@ -1,0 +1,46 @@
+﻿@StudentManagementAPI_HostAddress = http://localhost:5177
+
+###
+# 🔐 LOGIN
+POST {{StudentManagementAPI_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123"
+}
+
+###
+# 👨‍🎓 GET ALL STUDENTS
+GET {{StudentManagementAPI_HostAddress}}/api/student
+Accept: application/json
+
+###
+# ➕ ADD STUDENT
+POST {{StudentManagementAPI_HostAddress}}/api/student
+Content-Type: application/json
+
+{
+  "name": "Kedar",
+  "email": "k@gmail.com",
+  "age": 22,
+  "course": "CS"
+}
+
+###
+# ✏️ UPDATE STUDENT (Change ID)
+PUT {{StudentManagementAPI_HostAddress}}/api/student/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Updated Name",
+  "email": "updated@gmail.com",
+  "age": 23,
+  "course": "IT"
+}
+
+###
+# ❌ DELETE STUDENT
+DELETE {{StudentManagementAPI_HostAddress}}/api/student/1
+Accept: application/json
